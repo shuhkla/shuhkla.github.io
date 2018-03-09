@@ -2323,11 +2323,11 @@
 	                console.log("Magnetometer not supported. Make sure you configure chrome://flags/#enable-generic-sensor-extra-classes and deliver via HTTPS.");
 	    }
 
-	    // Check major differences on Magnetometer and identify this as a button-click
+	    // Check major differences on Magnetometer and identify as a button-click
 
 	    if (sensor !== undefined) {
 	        sensor.onreading = () => {
-	            var delta = this.sensor.x-this.lastSensorX;
+	            var delta = sensor.x-lastSensorX;
 	            
 	            if (delta > 100 ) {
 	                self.shoot();
