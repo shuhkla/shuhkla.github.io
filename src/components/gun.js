@@ -27,8 +27,7 @@ AFRAME.registerComponent('shoot', {
             sensor.start();
         }
     } catch(err) {
-        debugger;
-                console.log("Magnetometer not supported. Make sure you configure chrome://flags/#enable-generic-sensor-extra-classes and deliver via HTTPS.");
+        console.log("Magnetometer not supported. Make sure you configure chrome://flags/#enable-generic-sensor-extra-classes and deliver via HTTPS.");
     }
 
     // Check major differences on Magnetometer and identify as a button-click
@@ -36,6 +35,7 @@ AFRAME.registerComponent('shoot', {
     if (sensor !== undefined) {
         sensor.onreading = () => {
             var delta = sensor.x-lastSensorX;
+            console.log(sensor.x);
             
             if (delta > 100 ) {
                 self.shoot();
