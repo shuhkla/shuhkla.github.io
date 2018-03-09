@@ -1,2 +1,8 @@
-# shuhkla.github.io
-Test Website
+# PEWVR
+
+## Local Development
+
+```bash
+npm install
+npm start
+```
